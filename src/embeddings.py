@@ -1,7 +1,7 @@
 """Эмбеддинги.
 
 Dense:
-  - есть ключ Jina -> jina-embeddings-v3 через REST (как в оригинале t2-services-qdrant:
+  - есть ключ Jina -> jina-embeddings-v3 через REST (
     task=retrieval.passage для документов, retrieval.query для запроса);
   - иначе (dry-run / нет ключа) -> детерминированный hashed bag-of-words вектор.
     Это позволяет триажу по косинусной близости работать БЕЗ вызовов API
