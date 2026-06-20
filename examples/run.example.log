@@ -1,0 +1,26 @@
+15:11:44 | === Запуск ===  dry_run=False hybrid=True embeddings=True llm_providers=[cerebras,openrouter,mistral,gemini,cohere]
+15:11:46 | Статей: валидных=8, проблемных=1, дублей=0
+15:12:58 |   [index] indexed    2410.05570v2.pdf (40 чанков)
+15:12:58 |   [index] indexed    2412.10424v3.pdf (40 чанков)
+15:12:58 |   [index] indexed    2502.12109v2.pdf (40 чанков)
+15:12:58 |   [index] indexed    2502.18650v2.pdf (40 чанков)
+15:12:58 |   [index] indexed    2504.05683v1.pdf (40 чанков)
+15:12:58 |   [index] indexed    2507.14418v1.pdf (40 чанков)
+15:12:58 |   [index] indexed    2508.11873v1.pdf (40 чанков)
+15:12:58 |   [index] indexed    2605.29458v1.pdf (40 чанков)
+15:12:58 | Индексация: новых/обновлённых=8, без изменений=0
+15:13:51 | [plan] LLM построил 5 под-запросов
+15:14:01 | [triage] статей с попаданиями: 6
+15:14:51 | [judge] 2504.05683v1.pdf: дозапрос 'HR interview assessment LLM human-in-the-loop feedback generation evaluation criteria' -> +8 фрагментов
+15:16:51 | [judge] 2504.05683v1.pdf -> спорно (medium, 2 итер.)
+15:18:52 | [judge] 2508.11873v1.pdf: дозапрос 'LLM interview simulation Russian language localization HR-Tech feedback generation' -> +8 фрагментов
+15:20:52 | [judge] 2508.11873v1.pdf -> спорно (medium, 2 итер.)
+15:22:53 | [judge] 2410.05570v2.pdf: дозапрос 'LLM interview simulation feedback generation conversational AI mock interview HR-Tech' -> +8 фрагментов
+15:24:52 | [judge] 2410.05570v2.pdf -> спорно (medium, 2 итер.)
+15:26:52 | [judge] 2507.14418v1.pdf: дозапрос 'LLM conversational AI interview preparation think-aloud practice technical interviews' -> +8 фрагментов
+15:28:56 | [judge] 2507.14418v1.pdf -> спорно (medium, 2 итер.)
+15:30:52 | [judge] 2502.18650v2.pdf: дозапрос 'LLM job interview simulation HR-Tech conversational AI feedback generation' -> +8 фрагментов
+15:32:55 | [judge] 2502.18650v2.pdf -> подходит (high, 2 итер.)
+15:34:52 | [judge] 2412.10424v3.pdf: дозапрос 'LLM interview simulation conversational AI feedback generation mock interview HR-Tech' -> +8 фрагментов
+15:36:54 | [judge] 2412.10424v3.pdf -> подходит (medium, 2 итер.)
+15:37:53 | === Готово ===  отчёт: output\report.md

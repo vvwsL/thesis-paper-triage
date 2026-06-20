@@ -67,12 +67,12 @@ class State:
                 d = {}
         self.thesis = d.get("thesis", "thesis.md")
         self.hybrid = d.get("hybrid", False)
-        self.fast = d.get("fast", False)
+        self.full_agency = d.get("full_agency", False)   # True = поштучный цикл; False = батч
         self.providers = d.get("providers", [])   # коды; пусто = автопорядок из .env
 
     def save(self) -> None:
         STATE_FILE.write_text(json.dumps(
-            {"thesis": self.thesis, "hybrid": self.hybrid, "fast": self.fast,
+            {"thesis": self.thesis, "hybrid": self.hybrid, "full_agency": self.full_agency,
              "providers": self.providers}, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
@@ -99,9 +99,9 @@ def _available_providers() -> list[str]:
 def _run_env(state: State) -> dict:
     env = dict(os.environ)
     env["HYBRID"] = "true" if state.hybrid else "false"
-    if state.fast:
-        env["AGENT_LOOP"] = "false"
-        env["SELF_VERIFY"] = "false"
+    # режим агента задаётся прямо из меню (в .env лезть не нужно)
+    env["AGENT_LOOP"] = "true" if state.full_agency else "false"
+    env["SELF_VERIFY"] = "true" if state.full_agency else "false"
     if state.providers:
         env["LLM_PROVIDERS"] = ",".join(state.providers)
     env["PYTHONIOENCODING"] = "utf-8"
@@ -149,7 +149,8 @@ def _run_cli(state: State, *, dry_run: bool, rebuild: bool) -> None:
     if rebuild:
         args.append("--rebuild")
     clear()
-    log(f"=== Запуск === {' '.join(args[2:])} (hybrid={state.hybrid}, fast={state.fast})")
+    agent_mode = "полная агентность" if state.full_agency else "батч"
+    log(f"=== Запуск === {' '.join(args[2:])} (hybrid={state.hybrid}, агент={agent_mode})")
     subprocess.run(args, cwd=ROOT, env=_run_env(state), encoding="utf-8")
 
 
@@ -172,7 +173,7 @@ def _screen_status(state: State) -> None:
     print(f"  JINA_API_KEY:      {'есть' if _has_key('JINA_API_KEY') else 'нет -> dry-режим эмбеддингов'}")
     print(f"  LLM-провайдеры:    {', '.join(avail) if avail else 'нет ключей -> dry-режим'}")
     print(f"  Гибрид (BM25):     {'вкл' if state.hybrid else 'выкл'}")
-    print(f"  Быстрый режим:     {'вкл (~1 вызов/статью)' if state.fast else 'выкл (полная агентность)'}")
+    print(f"  Режим агента:      {'полная агентность (медленно)' if state.full_agency else 'батч (быстро)'}")
     print(f"  Индекс:            {_index_status(state)}")
     _pause()
 
@@ -256,7 +257,7 @@ def main() -> int:
             Choice("Открыть лог (run.log)", "log"),
             Choice(f"Тема: {state.thesis}", "thesis"),
             Choice(f"Гибрид (BM25): {'вкл' if state.hybrid else 'выкл'}", "hybrid"),
-            Choice(f"Быстрый режим: {'вкл' if state.fast else 'выкл'}", "fast"),
+            Choice(f"Режим агента: {'полная агентность' if state.full_agency else 'батч (быстро)'}", "agent_mode"),
             Choice(f"LLM-провайдеры: {', '.join(avail) if avail else 'нет'}", "providers"),
             Choice("Тесты", "tests"),
             Choice("Выход", "exit"),
@@ -287,8 +288,8 @@ def main() -> int:
                 state.thesis = ui.ask_text("Файл темы", state.thesis); state.save()
             elif cur == "hybrid":
                 state.hybrid = not state.hybrid; state.save()      # тумблер на месте
-            elif cur == "fast":
-                state.fast = not state.fast; state.save()          # тумблер на месте
+            elif cur == "agent_mode":
+                state.full_agency = not state.full_agency; state.save()   # тумблер на месте
             elif cur == "providers":
                 _choose_providers(state)
             elif cur == "tests":

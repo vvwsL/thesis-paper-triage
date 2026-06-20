@@ -1,0 +1,380 @@
+{
+  "events": [
+    {
+      "t": 1.911,
+      "step": "load",
+      "valid": [
+        "2410.05570v2.pdf",
+        "2412.10424v3.pdf",
+        "2502.12109v2.pdf",
+        "2502.18650v2.pdf",
+        "2504.05683v1.pdf",
+        "2507.14418v1.pdf",
+        "2508.11873v1.pdf",
+        "2605.29458v1.pdf"
+      ],
+      "failed": [
+        [
+          "Coaching Copilot_ Blended Form of an LLM-Powered Chatbot and a Human Coach to Effectively Support Self-Reflection for Leadership Growth.pdf",
+          "no_text_layer (возможно скан или пустой файл)"
+        ]
+      ],
+      "dups": []
+    },
+    {
+      "t": 74.176,
+      "step": "index",
+      "actions": [
+        [
+          "2410.05570v2.pdf",
+          "indexed",
+          40
+        ],
+        [
+          "2412.10424v3.pdf",
+          "indexed",
+          40
+        ],
+        [
+          "2502.12109v2.pdf",
+          "indexed",
+          40
+        ],
+        [
+          "2502.18650v2.pdf",
+          "indexed",
+          40
+        ],
+        [
+          "2504.05683v1.pdf",
+          "indexed",
+          40
+        ],
+        [
+          "2507.14418v1.pdf",
+          "indexed",
+          40
+        ],
+        [
+          "2508.11873v1.pdf",
+          "indexed",
+          40
+        ],
+        [
+          "2605.29458v1.pdf",
+          "indexed",
+          40
+        ]
+      ]
+    },
+    {
+      "t": 127.273,
+      "step": "plan",
+      "mode": "llm",
+      "provider": "mistral",
+      "queries": [
+        "large language models for interview preparation",
+        "LLM-based mock interview systems",
+        "NLP techniques for candidate assessment in HR-Tech",
+        "conversational AI for recruitment and feedback generation",
+        "adapting LLM for Russian-language interview simulations"
+      ],
+      "keywords": [
+        "large language models",
+        "LLM",
+        "interview preparation",
+        "mock interview",
+        "HR-Tech",
+        "recruitment",
+        "conversational AI",
+        "chatbot",
+        "NLP",
+        "feedback generation",
+        "candidate assessment",
+        "web application",
+        "GPT",
+        "interview simulation",
+        "Russian-language NLP",
+        "personalized feedback",
+        "dialogue systems",
+        "technical interview questions",
+        "behavioral interview questions"
+      ]
+    },
+    {
+      "t": 128.597,
+      "step": "triage_search",
+      "query": "large language models for interview preparation",
+      "hits": 8,
+      "top_score": 0.5769
+    },
+    {
+      "t": 131.442,
+      "step": "triage_search",
+      "query": "LLM-based mock interview systems",
+      "hits": 8,
+      "top_score": 0.75
+    },
+    {
+      "t": 134.652,
+      "step": "triage_search",
+      "query": "NLP techniques for candidate assessment in HR-Tech",
+      "hits": 8,
+      "top_score": 1.0
+    },
+    {
+      "t": 135.835,
+      "step": "triage_search",
+      "query": "conversational AI for recruitment and feedback generation",
+      "hits": 8,
+      "top_score": 0.5
+    },
+    {
+      "t": 137.184,
+      "step": "triage_search",
+      "query": "adapting LLM for Russian-language interview simulations",
+      "hits": 8,
+      "top_score": 0.8333
+    },
+    {
+      "t": 137.184,
+      "step": "triage",
+      "ranked": [
+        [
+          "2504.05683v1.pdf",
+          1.0
+        ],
+        [
+          "2508.11873v1.pdf",
+          0.8333
+        ],
+        [
+          "2410.05570v2.pdf",
+          0.75
+        ],
+        [
+          "2507.14418v1.pdf",
+          0.5
+        ],
+        [
+          "2502.18650v2.pdf",
+          0.25
+        ],
+        [
+          "2412.10424v3.pdf",
+          0.2198
+        ]
+      ]
+    },
+    {
+      "t": 186.639,
+      "step": "agent_loop",
+      "paper": "2504.05683v1.pdf",
+      "iter": 1,
+      "enough": false,
+      "refine_query": "HR interview assessment LLM human-in-the-loop feedback generation evaluation criteria"
+    },
+    {
+      "t": 247.833,
+      "step": "agent_loop",
+      "paper": "2504.05683v1.pdf",
+      "iter": 2,
+      "enough": false,
+      "refine_query": "LLM HR interview assessment human-in-the-loop feedback quality evaluation criteria"
+    },
+    {
+      "t": 307.685,
+      "step": "judge",
+      "paper": "2504.05683v1.pdf",
+      "mode": "llm",
+      "provider": "mistral",
+      "verdict": "спорно",
+      "confidence": "medium",
+      "iters": 2
+    },
+    {
+      "t": 367.036,
+      "step": "self_verify",
+      "paper": "2504.05683v1.pdf",
+      "grounded": true,
+      "note": "Фрагменты подтверждают, что статья посвящена оценке ответов кандидатов и генерации фидбэка с помощью LLM (стр. 2, 4, 5), но не содержат информации о генерации вопросов, архитектуре диалоговых систем или адаптации под русскоязычных пользователей, что соответствует обоснованию вывода."
+    },
+    {
+      "t": 427.292,
+      "step": "agent_loop",
+      "paper": "2508.11873v1.pdf",
+      "iter": 1,
+      "enough": false,
+      "refine_query": "LLM interview simulation Russian language localization HR-Tech feedback generation"
+    },
+    {
+      "t": 486.309,
+      "step": "agent_loop",
+      "paper": "2508.11873v1.pdf",
+      "iter": 2,
+      "enough": false,
+      "refine_query": "LLM interview training Russian language market HR-Tech"
+    },
+    {
+      "t": 548.22,
+      "step": "judge",
+      "paper": "2508.11873v1.pdf",
+      "mode": "llm",
+      "provider": "mistral",
+      "verdict": "спорно",
+      "confidence": "medium",
+      "iters": 2
+    },
+    {
+      "t": 608.84,
+      "step": "self_verify",
+      "paper": "2508.11873v1.pdf",
+      "grounded": true,
+      "note": "Обоснование полностью подтверждается приведёнными фрагментами:\n1. В стр.2 упоминается поддержка только английского и японского языков, что исключает русскоязычных пользователей.\n2. В стр.1 указано, что система предназначена для бизнес-профессионалов, входящих в трансформированный AI рынок труда, без упоминания российского рынка.\n3. В стр.3 приводятся примеры зарубежных систем (Meta.AI Mock Interview, FinalRoundAI, Yoodli), что косвенно подтверждает отсутствие ориентации на российскую специфику.\n4. В стр.5 и стр.8 описывается техническая реализация системы, но не затрагиваются вопросы локализации или адаптации под российский рынок труда."
+    },
+    {
+      "t": 667.951,
+      "step": "agent_loop",
+      "paper": "2410.05570v2.pdf",
+      "iter": 1,
+      "enough": false,
+      "refine_query": "LLM interview simulation feedback generation conversational AI mock interview HR-Tech"
+    },
+    {
+      "t": 728.199,
+      "step": "agent_loop",
+      "paper": "2410.05570v2.pdf",
+      "iter": 2,
+      "enough": false,
+      "refine_query": "LLM interview simulation feedback generation conversational AI mock interview"
+    },
+    {
+      "t": 788.457,
+      "step": "judge",
+      "paper": "2410.05570v2.pdf",
+      "mode": "llm",
+      "provider": "mistral",
+      "verdict": "спорно",
+      "confidence": "medium",
+      "iters": 2
+    },
+    {
+      "t": 847.712,
+      "step": "self_verify",
+      "paper": "2410.05570v2.pdf",
+      "grounded": true,
+      "note": "Фрагменты подтверждают, что статья частично затрагивает тему использования LLM для подготовки к собеседованиям (стр. 2-5), упоминаются системы для mock interviews (стр. 3), возможности оценки невербальных навыков (стр. 5) и ограничения текущих решений (стр. 4). Однако в приведённых фрагментах действительно не раскрываются вопросы генерации вопросов, архитектурных решений для диалогового формата или адаптации под русскоязычных пользователей."
+    },
+    {
+      "t": 906.692,
+      "step": "agent_loop",
+      "paper": "2507.14418v1.pdf",
+      "iter": 1,
+      "enough": false,
+      "refine_query": "LLM conversational AI interview preparation think-aloud practice technical interviews"
+    },
+    {
+      "t": 969.955,
+      "step": "agent_loop",
+      "paper": "2507.14418v1.pdf",
+      "iter": 2,
+      "enough": false,
+      "refine_query": "LLM technical interview preparation conversational AI think-aloud practice human-AI collaboration"
+    },
+    {
+      "t": 1031.931,
+      "step": "judge",
+      "paper": "2507.14418v1.pdf",
+      "mode": "llm",
+      "provider": "mistral",
+      "verdict": "спорно",
+      "confidence": "medium",
+      "iters": 2
+    },
+    {
+      "t": 1089.123,
+      "step": "self_verify",
+      "paper": "2507.14418v1.pdf",
+      "grounded": true,
+      "note": "Фрагменты подтверждают обсуждение использования LLM для подготовки к техническим интервью через диалоговые практики (think-aloud), что частично пересекается с темой диплома (вопросы 1, 3, 4). Однако в приведённых фрагментах действительно отсутствуют упоминания о генерации вопросов, анализе ответов, персонализированной обратной связи или адаптации под русскоязычных пользователей."
+    },
+    {
+      "t": 1147.454,
+      "step": "agent_loop",
+      "paper": "2502.18650v2.pdf",
+      "iter": 1,
+      "enough": false,
+      "refine_query": "LLM job interview simulation HR-Tech conversational AI feedback generation"
+    },
+    {
+      "t": 1207.153,
+      "step": "agent_loop",
+      "paper": "2502.18650v2.pdf",
+      "iter": 2,
+      "enough": false,
+      "refine_query": "LLM interview simulation feedback generation conversational AI reflective learning"
+    },
+    {
+      "t": 1271.106,
+      "step": "judge",
+      "paper": "2502.18650v2.pdf",
+      "mode": "llm",
+      "provider": "mistral",
+      "verdict": "подходит",
+      "confidence": "high",
+      "iters": 2
+    },
+    {
+      "t": 1328.749,
+      "step": "self_verify",
+      "paper": "2502.18650v2.pdf",
+      "grounded": true,
+      "note": "Фрагменты подтверждают обоснование вывода. В тексте упоминается LLM-приложение Conversate для подготовки к интервью с диалоговой обратной связью (стр.1, стр.4), что соответствует темам генерации вопросов, анализа ответов и интерактивного формата (вопросы 1-3). Также отмечается персонализация обучения и снижение субъективности оценки (стр.2)."
+    },
+    {
+      "t": 1387.105,
+      "step": "agent_loop",
+      "paper": "2412.10424v3.pdf",
+      "iter": 1,
+      "enough": false,
+      "refine_query": "LLM interview simulation conversational AI feedback generation mock interview HR-Tech"
+    },
+    {
+      "t": 1449.264,
+      "step": "agent_loop",
+      "paper": "2412.10424v3.pdf",
+      "iter": 2,
+      "enough": false,
+      "refine_query": "LLM interview simulation feedback generation conversational AI mock interview"
+    },
+    {
+      "t": 1509.947,
+      "step": "judge",
+      "paper": "2412.10424v3.pdf",
+      "mode": "llm",
+      "provider": "mistral",
+      "verdict": "подходит",
+      "confidence": "medium",
+      "iters": 2
+    },
+    {
+      "t": 1568.999,
+      "step": "self_verify",
+      "paper": "2412.10424v3.pdf",
+      "grounded": true,
+      "note": "Фрагменты подтверждают обоснование вывода. В тексте упоминается LLM-приложение Conversate для подготовки к собеседованиям, включая генерацию диалогов (стр.1, стр.3), анализ ответов и выделение областей для улучшения (стр.2), а также предоставление обратной связи (стр.2, стр.4). Также отмечается ограничение традиционной обратной связи (prescriptive feedback) и необходимость интерактивного подхода (стр.4), что частично пересекается с темами диплома. Архитектурные решения для интерактивного взаимодействия (например, диалоговая обратная связь с LLM-агентом) также упоминаются (стр.2)."
+    },
+    {
+      "t": 1568.999,
+      "step": "refusal",
+      "paper": "2502.12109v2.pdf",
+      "triage_score": 0.0
+    },
+    {
+      "t": 1568.999,
+      "step": "refusal",
+      "paper": "2605.29458v1.pdf",
+      "triage_score": 0.0
+    }
+  ]
+}

@@ -19,7 +19,7 @@ def write_report(results: List[PaperResult], failed: List[Paper], dup_notes: Lis
 
     providers = ", ".join(p.name for p in settings.llm_providers)
     mode = "DRY-RUN (LLM не вызывался)" if not settings.has_llm else f"LLM (фолбэк: {providers})"
-    embed_mode = "Gemini" if settings.has_embeddings else "hashed-fallback (без API)"
+    embed_mode = "Jina" if settings.has_embeddings else "hashed-fallback (без API)"
 
     lines: List[str] = []
     lines.append("# Отчёт триажа статей под тему диплома\n")
