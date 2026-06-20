@@ -1,0 +1,11 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+qdrant_db/
+output/*.md
+output/*.json
+output/*.log
+.pytest_cache/
+.menu_state.json
